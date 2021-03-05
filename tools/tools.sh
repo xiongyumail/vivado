@@ -66,7 +66,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
             libnss3 \
             libasound2 \
             libegl1 \
-            # buildroot
             libncurses-dev \
             cmake \
             libidn11-dev \
@@ -74,14 +73,13 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
             unzip \
             rsync \
             bc \
-            # rootfs
             qemu-user-static \
             debootstrap \
             kpartx \
             dosfstools
 
 wget -q -O /tmp/libpng12.deb http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb 
-dpkg -i /tmp/libpng12.deb 
+sudo dpkg -i /tmp/libpng12.deb 
 if [ ! -f "${TEMP_PATH}/.tools/vivado" ]; then
    cd ${WORK_PATH}
    cd vivado
